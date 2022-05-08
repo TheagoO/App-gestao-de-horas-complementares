@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Administrador">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/appBarAdministrador"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#449E65"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/adminSair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Administrador"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </com.google.android.material.navigation.NavigationView>
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarAdministrador"
+        app:srcCompat="@mipmap/logo" />
+
+
+    <Button
+        android:id="@+id/adminGerenciarUsuarios"
+        android:layout_width="257dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_view_left"
+        android:backgroundTint="#449E65"
+        android:elevation="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:stateListAnimator="@null"
+        android:text="Gerenciar usuários"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarAdministrador"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <Button
+        android:id="@+id/adminGerenciarCurso"
+        android:layout_width="257dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_view_center"
+        android:backgroundTint="#449E65"
+        android:elevation="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:stateListAnimator="@null"
+        android:text="Gerenciar Cursos"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminGerenciarUsuarios"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/adminGerenciarTurma"
+        android:layout_width="257dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_view_center"
+        android:backgroundTint="#449E65"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:text="Gerenciar turmas"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminGerenciarCurso"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/adminGerenciarPeriodo"
+        android:layout_width="257dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_view_center"
+        android:backgroundTint="#449E65"
+        android:elevation="10dp"
+        android:stateListAnimator="@null"
+        android:text="Gerenciar períodos"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminGerenciarTurma"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/adminGerenciarEscopo"
+        android:layout_width="257dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/card_view_right"
+        android:backgroundTint="#449E65"
+        android:elevation="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:stateListAnimator="@null"
+        android:text="Gerenciar motivos"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adminGerenciarPeriodo" />
+
+    <Button
+        android:id="@+id/botaoparastatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarAdministrador" />
+</androidx.constraintlayout.widget.ConstraintLayout>

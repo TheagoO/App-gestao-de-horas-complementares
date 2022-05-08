@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.apphorasmais" >
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name=".DefinirSenha"
+            android:exported="false" />
+        <activity
+            android:name=".CardSolicitacoes"
+            android:exported="false" />
+        <activity
+            android:name=".CardMinhasRequisicoes"
+            android:exported="false" />
+        <activity
+            android:name=".AtividadesComplementar"
+            android:exported="false" />
+        <activity
+            android:name=".CardAtividadeComplementar"
+            android:exported="false" />
+        <activity
+            android:name=".CardMinhasAtividades"
+            android:exported="false" />
+        <activity
+            android:name=".MinhasRequisicoes"
+            android:exported="false" />
+        <activity
+            android:name=".MinhasAtividades"
+            android:exported="false" />
+        <activity
+            android:name=".NovaRequisicao"
+            android:exported="false" />
+        <activity
+            android:name=".EditarUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".EditarTurma"
+            android:exported="false" />
+        <activity
+            android:name=".EditarSituacao"
+            android:exported="false" />
+        <activity
+            android:name=".EditarPeriodo"
+            android:exported="false" />
+        <activity
+            android:name=".EditarEscopo"
+            android:exported="false" />
+        <activity
+            android:name=".EditarCurso"
+            android:exported="false" />
+        <activity
+            android:name=".CardEscopo"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarEscopo"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroEscopo"
+            android:exported="false" />
+        <activity
+            android:name=".Administrador"
+            android:exported="false" />
+        <activity
+            android:name=".CardCurso"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarCurso"
+            android:exported="false" />
+        <activity
+            android:name=".CardPeriodo"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarPeriodo"
+            android:exported="false" />
+        <activity
+            android:name=".CardSituacao"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarSituacao"
+            android:exported="false" />
+        <activity
+            android:name=".CardTurma"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarTurma"
+            android:exported="false" />
+        <activity
+            android:name=".CardUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciarUsuarios"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroSituacao"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroTurma"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroPeriodo"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroCurso"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".ListaSolicitacoes"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarHoras"
+            android:exported="false" />
+        <activity
+            android:name=".AprovarRequerimento"
+            android:exported="false" />
+        <activity
+            android:name=".Coordenador"
+            android:exported="false" />
+        <activity
+            android:name=".Aluno"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
