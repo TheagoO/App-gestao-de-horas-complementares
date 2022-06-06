@@ -2,10 +2,7 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.example.apphorasmais.model.entity.Aluno;
+import com.example.apphorasmais.repository.Aluno;
 
 import java.util.List;
 import com.example.apphorasmais.model.dao.AlunoDao;

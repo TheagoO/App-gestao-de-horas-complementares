@@ -14,8 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.model.entity.Curso;
-import com.example.apphorasmais.model.entity.Coordenador;
+import com.example.apphorasmais.repository.Curso;
+import com.example.apphorasmais.repository.Coordenador;
 import com.example.apphorasmais.model.facade.Facade;
 
 import java.util.List;

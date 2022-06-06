@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.model.entity.Solicitacao;
-import com.example.apphorasmais.model.entity.Coordenador;
+import com.example.apphorasmais.repository.Solicitacao;
+import com.example.apphorasmais.repository.Coordenador;
 import com.example.apphorasmais.AprovarRequerimento;
 
 import java.time.format.DateTimeFormatter;

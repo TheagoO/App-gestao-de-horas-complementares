@@ -1,6 +1,8 @@
 package com.example.apphorasmais.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.model.entity.Curso;
+import com.example.apphorasmais.repository.Curso;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.apphorasmais.R;
 import com.example.apphorasmais.EditarCurso;
@@ -84,11 +86,27 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolderCu
             excluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    alertaDialogo(view.getContext());
+                }
+            });
+        }
+
+        protected void alertaDialogo(final Context context) {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Atenção");
+            builder.setMessage("Deseja mesmo excluir este curso?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
                     String retorno = facade.excluirCurso(context, getId());
                     atualizarLista(context);
                     Toast.makeText(context, retorno, Toast.LENGTH_SHORT).show();
                 }
             });
+            builder.setNegativeButton("Cancelar", null);
+            alertDialog = builder.create();
+            alertDialog.show();
         }
 
         private void atualizarLista(Context context) {

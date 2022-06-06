@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.apphorasmais.model.entity.PeriodoLetivo;
+import com.example.apphorasmais.repository.PeriodoLetivo;
 import com.example.apphorasmais.model.facade.Facade;
 import com.example.apphorasmais.adapter.PeriodoAdapter;
 

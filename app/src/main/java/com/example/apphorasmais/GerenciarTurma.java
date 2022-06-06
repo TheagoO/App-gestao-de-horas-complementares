@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.example.apphorasmais.adapter.TurmaAdapter;
 import com.example.apphorasmais.model.facade.Facade;
-import com.example.apphorasmais.model.entity.Turma;
+import com.example.apphorasmais.repository.Turma;
 
 import java.util.List;
 

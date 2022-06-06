@@ -12,9 +12,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.model.entity.PeriodoLetivo;
-import com.example.apphorasmais.model.entity.Curso;
-import com.example.apphorasmais.model.entity.Turma;
+import com.example.apphorasmais.repository.PeriodoLetivo;
+import com.example.apphorasmais.repository.Curso;
+import com.example.apphorasmais.repository.Turma;
 import com.example.apphorasmais.model.facade.Facade;
 
 import java.util.List;

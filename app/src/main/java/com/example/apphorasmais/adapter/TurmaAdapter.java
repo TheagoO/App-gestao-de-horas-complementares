@@ -1,6 +1,8 @@
 package com.example.apphorasmais.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apphorasmais.model.entity.Turma;
+import com.example.apphorasmais.repository.Turma;
 import com.example.apphorasmais.model.facade.Facade;
 import com.example.apphorasmais.EditarTurma;
 import com.example.apphorasmais.R;
@@ -92,9 +94,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.ViewHolderTu
             excluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String retorno = facade.excluirTurma(context, getId());
-                    atualizarLista(context);
-                    Toast.makeText(context, retorno, Toast.LENGTH_SHORT).show();
+                    alertaDialogo(view.getContext());
                 }
             });
         }
@@ -102,6 +102,24 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.ViewHolderTu
         private void atualizarLista(Context context) {
             dados = facade.listarTurmas(context);
             notifyDataSetChanged();
+        }
+
+        protected void alertaDialogo(final Context context) {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Atenção");
+            builder.setMessage("Deseja mesmo excluir esta turma?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    String retorno = facade.excluirTurma(context, getId());
+                    atualizarLista(context);
+                    Toast.makeText(context, retorno, Toast.LENGTH_SHORT).show();
+                }
+            });
+            builder.setNegativeButton("Cancelar", null);
+            alertDialog = builder.create();
+            alertDialog.show();
         }
 
         private int getId(){

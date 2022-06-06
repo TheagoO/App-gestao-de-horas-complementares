@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class Aluno extends AppCompatActivity {
 
-    private com.example.apphorasmais.model.entity.Aluno aluno;
+    private com.example.apphorasmais.repository.Aluno aluno;
     private TextView nome;
     private ImageView sair;
     private TextView totalAtividades;
@@ -39,7 +39,7 @@ public class Aluno extends AppCompatActivity {
 
     protected void recuperaParametros() {
         Bundle bundle = getIntent().getExtras();
-        aluno = (com.example.apphorasmais.model.entity.Aluno) bundle.get("ALUNO");
+        aluno = (com.example.apphorasmais.repository.Aluno) bundle.get("ALUNO");
     }
 
     protected void sair() {

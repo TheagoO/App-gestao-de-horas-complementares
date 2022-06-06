@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.apphorasmais.model.facade.*;
-import com.example.apphorasmais.model.entity.PeriodoLetivo;
+import com.example.apphorasmais.repository.PeriodoLetivo;
 
 /**
  * @author Thiago Ferreira Assumpção

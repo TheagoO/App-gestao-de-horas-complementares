@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphorasmais.adapter.AtividadeComplementarAdapter;
-import com.example.apphorasmais.model.entity.Atividade;
-import com.example.apphorasmais.model.entity.Aluno;
+import com.example.apphorasmais.repository.Atividade;
+import com.example.apphorasmais.repository.Aluno;
 
 /**
  * @author Thiago Ferreira Assumpção

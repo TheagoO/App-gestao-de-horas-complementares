@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.model.entity.AtividadeComplementar;
+import com.example.apphorasmais.repository.AtividadeComplementar;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class AtividadeComplementarAdapter extends RecyclerView.Adapter<Atividade
     public void onBindViewHolder(@NonNull ViewHolderAtividadeComplementar holder, int position) {
         holder.titulo.setText(dados.get(position).getTitulo());
         holder.instituicao.setText(dados.get(position).getInstituicao());
-        holder.carga.setText(String.valueOf(dados.get(position).getCargaHoraria()));
+        holder.carga.setText((String.valueOf(dados.get(position).getCargaHoraria()))+" Horas");
         holder.horas.setText(String.valueOf(dados.get(position).getHoraComplementar()));
     }
 

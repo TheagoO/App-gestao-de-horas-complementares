@@ -1,11 +1,8 @@
 package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.example.apphorasmais.model.entity.Turma;
+import com.example.apphorasmais.repository.Turma;
 
 import java.util.List;
 import com.example.apphorasmais.model.dao.TurmaDao;

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.apphorasmais.model.facade.*;
-import com.example.apphorasmais.model.entity.Situacao;
+import com.example.apphorasmais.repository.Situacao;
 
 /**
  * @author Thiago Ferreira Assumpção

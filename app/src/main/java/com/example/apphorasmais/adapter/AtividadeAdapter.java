@@ -11,10 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apphorasmais.model.entity.Atividade;
+import com.example.apphorasmais.repository.Atividade;
 import com.example.apphorasmais.AtividadesComplementar;
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.model.entity.Aluno;
+import com.example.apphorasmais.repository.Aluno;
 
 import java.util.List;
 

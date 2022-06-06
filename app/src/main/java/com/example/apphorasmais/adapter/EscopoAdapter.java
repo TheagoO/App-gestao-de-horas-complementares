@@ -1,6 +1,8 @@
 package com.example.apphorasmais.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.model.entity.Escopo;
+import com.example.apphorasmais.repository.Escopo;
 import com.example.apphorasmais.R;
 import com.example.apphorasmais.EditarEscopo;
 import com.example.apphorasmais.model.facade.Facade;
@@ -86,12 +88,27 @@ public class EscopoAdapter extends RecyclerView.Adapter<EscopoAdapter.ViewHolder
             excluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    alertaDialogo(view.getContext());
+                }
+            });
+        }
+
+        protected void alertaDialogo(final Context context) {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Atenção");
+            builder.setMessage("Deseja mesmo excluir este motivo?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
                     String retorno = facade.excluirEscopo(context, getId());
                     atualizarLista(context);
                     Toast.makeText(context, retorno, Toast.LENGTH_SHORT).show();
                 }
-
             });
+            builder.setNegativeButton("Cancelar", null);
+            alertDialog = builder.create();
+            alertDialog.show();
         }
 
         private void atualizarLista(Context context) {

@@ -2,7 +2,7 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.entity.Atividade;
+import com.example.apphorasmais.repository.Atividade;
 
 import java.util.List;
 import com.example.apphorasmais.model.dao.AtividadeDao;

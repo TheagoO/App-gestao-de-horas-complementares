@@ -4,8 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.entity.Situacao;
-import com.example.apphorasmais.model.entity.Turma;
+import com.example.apphorasmais.repository.Turma;
 
 import java.util.ArrayList;
 import java.util.List;

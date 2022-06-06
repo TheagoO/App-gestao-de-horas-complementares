@@ -26,9 +26,7 @@ public class Administrador extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_administrador);
-
         abrirTelaGerenciarStatus();
-
         sair();
         abrirTelaGerenciarUsuario();
         abrirTelaGerenciarCursos();

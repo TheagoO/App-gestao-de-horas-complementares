@@ -3,8 +3,7 @@ package com.example.apphorasmais.model.bo;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.apphorasmais.model.dao.SituacaoDao;
-import com.example.apphorasmais.model.entity.Curso;
-import com.example.apphorasmais.model.entity.Situacao;
+import com.example.apphorasmais.repository.Situacao;
 
 import java.util.List;
 

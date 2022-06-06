@@ -12,7 +12,7 @@ import androidx.appcompat.widget.SearchView;
 
 import com.example.apphorasmais.adapter.EscopoAdapter;
 import com.example.apphorasmais.model.facade.Facade;
-import com.example.apphorasmais.model.entity.Escopo;
+import com.example.apphorasmais.repository.Escopo;
 
 import java.util.List;
 

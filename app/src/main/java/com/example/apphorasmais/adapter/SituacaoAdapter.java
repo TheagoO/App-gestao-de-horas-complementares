@@ -1,6 +1,8 @@
 package com.example.apphorasmais.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.model.entity.Situacao;
+import com.example.apphorasmais.repository.Situacao;
 
 import java.util.List;
+
 import com.example.apphorasmais.EditarSituacao;
 import com.example.apphorasmais.model.facade.Facade;
 
@@ -27,7 +30,7 @@ public class SituacaoAdapter extends RecyclerView.Adapter<SituacaoAdapter.ViewHo
 
     private List<Situacao> dados;
 
-    public SituacaoAdapter(List<Situacao> dados){
+    public SituacaoAdapter(List<Situacao> dados) {
         this.dados = dados;
     }
 
@@ -43,14 +46,14 @@ public class SituacaoAdapter extends RecyclerView.Adapter<SituacaoAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull SituacaoAdapter.ViewHolderSituacao holder, int position) {
-        if(dados != null && dados.size() > 0){
+        if (dados != null && dados.size() > 0) {
             holder.status.setText(dados.get(position).getStatus());
         }
     }
 
     @Override
     public int getItemCount() {
-        if(dados != null){
+        if (dados != null) {
             return dados.size();
         }
         return 0;
@@ -79,11 +82,7 @@ public class SituacaoAdapter extends RecyclerView.Adapter<SituacaoAdapter.ViewHo
             excluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(dados.size() > 0){
-                        facade.excluirStatus(context, getId());
-                        atualizarLista(context);
-                        Toast.makeText(context, "Status deletado", Toast.LENGTH_SHORT).show();
-                    }
+                    alertaDialogo(view.getContext());
                 }
             });
         }
@@ -93,11 +92,29 @@ public class SituacaoAdapter extends RecyclerView.Adapter<SituacaoAdapter.ViewHo
             notifyDataSetChanged();
         }
 
+        protected void alertaDialogo(final Context context) {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Atenção");
+            builder.setMessage("Deseja mesmo excluir este status?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    facade.excluirStatus(context, getId());
+                    atualizarLista(context);
+                    Toast.makeText(context, "Status deletado", Toast.LENGTH_SHORT).show();
+                }
+            });
+            builder.setNegativeButton("Cancelar", null);
+            alertDialog = builder.create();
+            alertDialog.show();
+        }
+
         private void editarSituacao(Context context) {
             editar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(dados.size() > 0){
+                    if (dados.size() > 0) {
                         Intent i = new Intent(context, EditarSituacao.class);
                         i.putExtra("SITUACAO", dados.get(getLayoutPosition()));
                         context.startActivity(i);
@@ -106,7 +123,7 @@ public class SituacaoAdapter extends RecyclerView.Adapter<SituacaoAdapter.ViewHo
             });
         }
 
-        private int getId(){
+        private int getId() {
             return dados.get(getLayoutPosition()).getId();
         }
 

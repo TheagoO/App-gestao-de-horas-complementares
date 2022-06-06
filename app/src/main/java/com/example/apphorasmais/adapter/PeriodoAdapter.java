@@ -1,6 +1,8 @@
 package com.example.apphorasmais.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apphorasmais.model.entity.PeriodoLetivo;
+import com.example.apphorasmais.repository.PeriodoLetivo;
 import com.example.apphorasmais.R;
 import com.example.apphorasmais.EditarPeriodo;
 import com.example.apphorasmais.model.facade.Facade;
@@ -86,11 +88,27 @@ public class PeriodoAdapter extends RecyclerView.Adapter<PeriodoAdapter.ViewHold
             excluir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    alertaDialogo(view.getContext());
+                }
+            });
+        }
+
+        protected void alertaDialogo(final Context context) {
+            AlertDialog alertDialog;
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Atenção");
+            builder.setMessage("Deseja mesmo excluir este período?");
+            builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
                     String retorno = facade.excluirPeriodo(context, getId());
                     atualizarLista(context);
                     Toast.makeText(context, retorno, Toast.LENGTH_SHORT).show();
                 }
             });
+            builder.setNegativeButton("Cancelar", null);
+            alertDialog = builder.create();
+            alertDialog.show();
         }
 
         private void atualizarLista(Context context) {

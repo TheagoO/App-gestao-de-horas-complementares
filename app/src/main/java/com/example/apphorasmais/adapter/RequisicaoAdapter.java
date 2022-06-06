@@ -7,12 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.model.entity.Solicitacao;
+import com.example.apphorasmais.repository.Solicitacao;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;

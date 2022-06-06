@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.apphorasmais.model.entity.Atividade;
+import com.example.apphorasmais.repository.Atividade;
 import com.example.apphorasmais.adapter.AtividadeAdapter;
 
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MinhasAtividades extends AppCompatActivity {
 
-    private com.example.apphorasmais.model.entity.Aluno aluno;
+    private com.example.apphorasmais.repository.Aluno aluno;
     private ImageView voltar;
     private RecyclerView recyclerView;
     private AtividadeAdapter atividadeAdapter;
@@ -36,7 +36,7 @@ public class MinhasAtividades extends AppCompatActivity {
 
     protected void recuperaParametros() {
         Bundle bundle = getIntent().getExtras();
-        aluno = (com.example.apphorasmais.model.entity.Aluno) bundle.get("ALUNO");
+        aluno = (com.example.apphorasmais.repository.Aluno) bundle.get("ALUNO");
     }
 
     protected void constroiRecyclerView() {

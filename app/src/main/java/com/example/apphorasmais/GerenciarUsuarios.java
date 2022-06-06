@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.example.apphorasmais.model.facade.Facade;
-import com.example.apphorasmais.model.entity.Coordenador;
-import com.example.apphorasmais.model.entity.Aluno;
+import com.example.apphorasmais.repository.Coordenador;
+import com.example.apphorasmais.repository.Aluno;
 import com.example.apphorasmais.adapter.CoordenadorAdapter;
 import com.example.apphorasmais.adapter.AlunoAdapter;
 

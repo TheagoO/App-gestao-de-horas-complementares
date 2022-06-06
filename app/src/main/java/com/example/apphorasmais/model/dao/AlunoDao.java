@@ -4,8 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.entity.Aluno;
-import com.example.apphorasmais.model.entity.PeriodoLetivo;
+import com.example.apphorasmais.repository.Aluno;
 
 import java.util.ArrayList;
 import java.util.List;

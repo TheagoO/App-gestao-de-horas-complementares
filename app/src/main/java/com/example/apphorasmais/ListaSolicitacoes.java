@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphorasmais.adapter.SolicitacaoAdapter;
-import com.example.apphorasmais.model.entity.Solicitacao;
-import com.example.apphorasmais.model.entity.Coordenador;
+import com.example.apphorasmais.repository.Solicitacao;
+import com.example.apphorasmais.repository.Coordenador;
 
 import java.util.ArrayList;
 import java.util.List;

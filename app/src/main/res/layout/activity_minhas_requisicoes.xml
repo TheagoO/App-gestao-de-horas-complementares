@@ -34,28 +34,14 @@
             app:srcCompat="@android:drawable/ic_menu_revert" />
     </com.google.android.material.navigation.NavigationView>
 
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarMinhasRequisicoes"
-        app:srcCompat="@mipmap/logo" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/minhasRequisicoesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="452dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView25"
+        app:layout_constraintTop_toBottomOf="@+id/appBarMinhasRequisicoes"
         tools:listitem="@layout/activity_card_minhas_requisicoes" />
 </androidx.constraintlayout.widget.ConstraintLayout>

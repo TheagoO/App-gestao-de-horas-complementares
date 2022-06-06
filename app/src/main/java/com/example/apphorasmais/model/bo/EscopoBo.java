@@ -2,10 +2,9 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.entity.Escopo;
+import com.example.apphorasmais.repository.Escopo;
 
 import java.util.List;
-import java.util.Locale;
 
 import com.example.apphorasmais.model.dao.EscopoDao;
 

@@ -2,7 +2,7 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.entity.Solicitacao;
+import com.example.apphorasmais.repository.Solicitacao;
 
 import java.util.List;
 import java.util.Random;

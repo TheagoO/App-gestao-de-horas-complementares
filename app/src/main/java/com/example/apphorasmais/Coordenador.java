@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class Coordenador extends AppCompatActivity {
 
-    private com.example.apphorasmais.model.entity.Coordenador coordenador;
+    private com.example.apphorasmais.repository.Coordenador coordenador;
     private ImageView sair;
     private TextView nome;
     private Button requisicoes;
@@ -70,6 +70,6 @@ public class Coordenador extends AppCompatActivity {
 
     protected void recuperarParametros(){
         Bundle bundle = getIntent().getExtras();
-        coordenador = (com.example.apphorasmais.model.entity.Coordenador) bundle.get("COORDENADOR");
+        coordenador = (com.example.apphorasmais.repository.Coordenador) bundle.get("COORDENADOR");
     }
 }

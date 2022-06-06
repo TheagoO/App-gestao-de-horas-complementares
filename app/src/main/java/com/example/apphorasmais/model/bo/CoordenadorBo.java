@@ -2,9 +2,7 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.dao.AlunoDao;
-import com.example.apphorasmais.model.entity.Aluno;
-import com.example.apphorasmais.model.entity.Coordenador;
+import com.example.apphorasmais.repository.Coordenador;
 
 import java.util.List;
 import com.example.apphorasmais.model.dao.CoordenadorDao;

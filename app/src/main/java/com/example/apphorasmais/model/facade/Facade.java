@@ -4,11 +4,20 @@ import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
-
 import com.example.apphorasmais.model.bo.*;
-import com.example.apphorasmais.model.entity.*;
 import com.example.apphorasmais.model.util.Conexao;
+import com.example.apphorasmais.repository.Aluno;
+import com.example.apphorasmais.repository.Atividade;
+import com.example.apphorasmais.repository.AtividadeComplementar;
+import com.example.apphorasmais.repository.Coordenador;
+import com.example.apphorasmais.repository.Curso;
+import com.example.apphorasmais.repository.Escopo;
+import com.example.apphorasmais.repository.HoraComplementar;
+import com.example.apphorasmais.repository.PeriodoLetivo;
+import com.example.apphorasmais.repository.Requerimento;
+import com.example.apphorasmais.repository.Situacao;
+import com.example.apphorasmais.repository.Solicitacao;
+import com.example.apphorasmais.repository.Turma;
 
 import java.util.ArrayList;
 import java.util.List;
