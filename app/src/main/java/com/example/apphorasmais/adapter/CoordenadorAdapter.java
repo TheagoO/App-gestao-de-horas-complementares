@@ -15,7 +15,7 @@ import com.example.apphorasmais.model.facade.Facade;
 import com.example.apphorasmais.R;
 
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.apphorasmais.repository.Coordenador;
+import com.example.apphorasmais.model.entity.Coordenador;
 import com.example.apphorasmais.EditarUsuario;
 
 import java.util.List;

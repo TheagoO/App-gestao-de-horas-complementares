@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.AtividadeComplementar;
+import com.example.apphorasmais.model.entity.AtividadeComplementar;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.AtividadeComplementarDao;
+import com.example.apphorasmais.repository.AtividadeComplementarRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -15,7 +15,7 @@ public class AtividadeComplementarBo {
 
     public int salvar(SQLiteDatabase conexao, AtividadeComplementar atividadeComplementar) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             return dao.salvar(atividadeComplementar);
         }
         return 0;
@@ -23,7 +23,7 @@ public class AtividadeComplementarBo {
 
     public String editar(SQLiteDatabase conexao, AtividadeComplementar atividadeComplementar) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             dao.editar(atividadeComplementar);
             return "Alterado";
         }
@@ -32,7 +32,7 @@ public class AtividadeComplementarBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -40,7 +40,7 @@ public class AtividadeComplementarBo {
 
     public List<AtividadeComplementar> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -48,7 +48,7 @@ public class AtividadeComplementarBo {
 
     public List<AtividadeComplementar> pesquisar(SQLiteDatabase conexao, String titulo) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             return dao.pesquisar(titulo);
         }
         return null;
@@ -56,7 +56,7 @@ public class AtividadeComplementarBo {
 
     public List<AtividadeComplementar> consultar(SQLiteDatabase conexao, int atividade_id) {
         if(conexao != null){
-            AtividadeComplementarDao dao = new AtividadeComplementarDao(conexao);
+            AtividadeComplementarRepository dao = new AtividadeComplementarRepository(conexao);
             return dao.consultar(atividade_id);
         }
         return null;

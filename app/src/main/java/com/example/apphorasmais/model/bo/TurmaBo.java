@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.Turma;
+import com.example.apphorasmais.model.entity.Turma;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.TurmaDao;
+import com.example.apphorasmais.repository.TurmaRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -15,7 +15,7 @@ public class TurmaBo {
 
     public String salvar(SQLiteDatabase conexao, Turma turma) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             if(dao.salvar(turma) != -1){
                 return "Turma cadastrada";
             }
@@ -26,7 +26,7 @@ public class TurmaBo {
     public String editar(SQLiteDatabase conexao, Turma turma, String grupo, Boolean editado) {
         if(conexao != null){
             if(validarDados(turma, grupo) || editado.booleanValue()){
-                TurmaDao dao = new TurmaDao(conexao);
+                TurmaRepository dao = new TurmaRepository(conexao);
                 turma.setGrupo(grupo);
                 dao.editar(turma);
                 return "Turma alterada";
@@ -48,7 +48,7 @@ public class TurmaBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -56,7 +56,7 @@ public class TurmaBo {
 
     public List<Turma> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -64,7 +64,7 @@ public class TurmaBo {
 
     public List<Turma> listar(SQLiteDatabase conexao, String curso) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             return dao.listar(curso);
         }
         return null;
@@ -72,7 +72,7 @@ public class TurmaBo {
 
     public List<Turma> pesquisar(SQLiteDatabase conexao, String turma) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             return dao.pesquisar(turma);
         }
         return null;
@@ -80,7 +80,7 @@ public class TurmaBo {
 
     public Turma consultar(SQLiteDatabase conexao, String grupo) {
         if(conexao != null){
-            TurmaDao dao = new TurmaDao(conexao);
+            TurmaRepository dao = new TurmaRepository(conexao);
             return dao.consultar(grupo);
         }
         return null;

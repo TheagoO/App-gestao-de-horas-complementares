@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.PeriodoLetivo;
+import com.example.apphorasmais.model.entity.PeriodoLetivo;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.PeriodoLetivoDao;
+import com.example.apphorasmais.repository.PeriodoLetivoRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -15,7 +15,7 @@ public class PeriodoLetivoBo {
 
     public int salvar(SQLiteDatabase conexao, PeriodoLetivo periodo) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             return dao.salvar(periodo);
         }
         return 0;
@@ -24,7 +24,7 @@ public class PeriodoLetivoBo {
     public String editar(SQLiteDatabase conexao, PeriodoLetivo periodoLetivo, String periodo) {
         if(conexao != null){
             if(validarDados(periodoLetivo, periodo)){
-                PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+                PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
                 dao.editar(periodoLetivo);
                 return "Período alterado";
             }
@@ -43,7 +43,7 @@ public class PeriodoLetivoBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -51,7 +51,7 @@ public class PeriodoLetivoBo {
 
     public List<PeriodoLetivo> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -59,7 +59,7 @@ public class PeriodoLetivoBo {
 
     public List<PeriodoLetivo> listar(SQLiteDatabase conexao, String turma) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             return dao.listar(turma);
         }
         return null;
@@ -67,7 +67,7 @@ public class PeriodoLetivoBo {
 
     public List<PeriodoLetivo> pesquisar(SQLiteDatabase conexao, String periodo) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             return dao.pesquisar(periodo);
         }
         return null;
@@ -75,7 +75,7 @@ public class PeriodoLetivoBo {
 
     public PeriodoLetivo consultar(SQLiteDatabase conexao, String periodo) {
         if(conexao != null){
-            PeriodoLetivoDao dao = new PeriodoLetivoDao(conexao);
+            PeriodoLetivoRepository dao = new PeriodoLetivoRepository(conexao);
             return dao.consultar(periodo);
         }
         return null;

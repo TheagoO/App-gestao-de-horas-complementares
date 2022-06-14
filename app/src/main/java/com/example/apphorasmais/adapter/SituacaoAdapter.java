@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.repository.Situacao;
+import com.example.apphorasmais.model.entity.Situacao;
 
 import java.util.List;
 

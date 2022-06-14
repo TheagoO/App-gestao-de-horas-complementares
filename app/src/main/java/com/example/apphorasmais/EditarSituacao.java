@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.repository.Situacao;
+import com.example.apphorasmais.model.entity.Situacao;
 import com.example.apphorasmais.model.facade.Facade;
 
 /**

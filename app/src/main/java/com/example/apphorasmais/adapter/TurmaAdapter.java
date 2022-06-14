@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apphorasmais.repository.Turma;
+import com.example.apphorasmais.model.entity.Turma;
 import com.example.apphorasmais.model.facade.Facade;
 import com.example.apphorasmais.EditarTurma;
 import com.example.apphorasmais.R;

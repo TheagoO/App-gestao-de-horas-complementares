@@ -1,7 +1,6 @@
 package com.example.apphorasmais.model.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * @author Thiago Ferreira Assumpção

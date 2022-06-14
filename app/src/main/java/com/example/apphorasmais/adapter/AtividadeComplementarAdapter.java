@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.apphorasmais.R;
-import com.example.apphorasmais.repository.AtividadeComplementar;
+import com.example.apphorasmais.model.entity.AtividadeComplementar;
 
 import java.util.List;
 

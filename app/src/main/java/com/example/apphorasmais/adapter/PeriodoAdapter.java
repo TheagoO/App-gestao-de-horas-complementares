@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.apphorasmais.repository.PeriodoLetivo;
+import com.example.apphorasmais.model.entity.PeriodoLetivo;
 import com.example.apphorasmais.R;
 import com.example.apphorasmais.EditarPeriodo;
 import com.example.apphorasmais.model.facade.Facade;

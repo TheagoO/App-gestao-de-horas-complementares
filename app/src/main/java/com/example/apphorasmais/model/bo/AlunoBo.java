@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.Aluno;
+import com.example.apphorasmais.model.entity.Aluno;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.AlunoDao;
+import com.example.apphorasmais.repository.AlunoRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -15,7 +15,7 @@ public class AlunoBo {
 
     public String salvar(SQLiteDatabase conexao, Aluno aluno) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             if(aplicarRegrasNegocio(aluno)){
                 dao.salvar(aluno);
                 return "Aluno cadastrado! Senha: "+aluno.getSenha();
@@ -40,7 +40,7 @@ public class AlunoBo {
         if(conexao != null){
             String retorno = validaDados(aluno, nome, usuario);
             if (retorno.contains("Usuário alterado")){
-                AlunoDao dao = new AlunoDao(conexao);
+                AlunoRepository dao = new AlunoRepository(conexao);
                 dao.editar(aluno);
             }
             return retorno;
@@ -59,7 +59,7 @@ public class AlunoBo {
 
     public String resetarSenha(SQLiteDatabase conexao, int id){
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             dao.resetarSenha(id);
             return "Senha redefinida para 20220320";
         }
@@ -69,7 +69,7 @@ public class AlunoBo {
     public String definirSenha(SQLiteDatabase conexao, int id, String senha, String confirmarSenha){
         if(conexao != null){
             if(validarSenha(senha, confirmarSenha)){
-                AlunoDao dao = new AlunoDao(conexao);
+                AlunoRepository dao = new AlunoRepository(conexao);
                 dao.definirSenha(id, senha);
                 return "Senha definida";
             }else{
@@ -89,7 +89,7 @@ public class AlunoBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -97,7 +97,7 @@ public class AlunoBo {
 
     public List<Aluno> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -105,7 +105,7 @@ public class AlunoBo {
 
     public List<Aluno> pesquisar(SQLiteDatabase conexao, String nome) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             return dao.pesquisar(nome);
         }
         return null;
@@ -113,7 +113,7 @@ public class AlunoBo {
 
     public Aluno consultar(SQLiteDatabase conexao, String usuario, String senha) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             Aluno aluno = dao.consultar(usuario);
             if(aluno != null && aluno.getId() != 0 && senha != null){
                 if(aluno.getSenha().equals(senha)){
@@ -128,7 +128,7 @@ public class AlunoBo {
 
     public Aluno consultar(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            AlunoDao dao = new AlunoDao(conexao);
+            AlunoRepository dao = new AlunoRepository(conexao);
             return dao.consultar(id);
         }
         return null;

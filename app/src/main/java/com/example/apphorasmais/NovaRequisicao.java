@@ -18,8 +18,8 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.List;
 
-import com.example.apphorasmais.repository.Requerimento;
-import com.example.apphorasmais.repository.Escopo;
+import com.example.apphorasmais.model.entity.Requerimento;
+import com.example.apphorasmais.model.entity.Escopo;
 import com.example.apphorasmais.model.facade.Facade;
 
 /**
@@ -28,7 +28,7 @@ import com.example.apphorasmais.model.facade.Facade;
 
 public class NovaRequisicao extends AppCompatActivity {
 
-    private com.example.apphorasmais.repository.Aluno aluno;
+    private com.example.apphorasmais.model.entity.Aluno aluno;
     private ImageView voltar;
     private TextView titulo;
     private TextView instituicao;
@@ -152,7 +152,7 @@ public class NovaRequisicao extends AppCompatActivity {
 
     protected void recuperaParametros() {
         Bundle bundle = getIntent().getExtras();
-        aluno = (com.example.apphorasmais.repository.Aluno) bundle.get("ALUNO");
+        aluno = (com.example.apphorasmais.model.entity.Aluno) bundle.get("ALUNO");
     }
 
     protected void datePickerInicio(){

@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.Requerimento;
+import com.example.apphorasmais.model.entity.Requerimento;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.RequerimentoDao;
+import com.example.apphorasmais.repository.RequerimentoRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -16,7 +16,7 @@ public class RequerimentoBo {
     public int salvar(SQLiteDatabase conexao, Requerimento requerimento) {
         if(conexao != null){
             if(validaCampos(requerimento)){
-                RequerimentoDao dao = new RequerimentoDao(conexao);
+                RequerimentoRepository dao = new RequerimentoRepository(conexao);
                 return dao.salvar(requerimento);
             }
         }
@@ -32,7 +32,7 @@ public class RequerimentoBo {
 
     public String editar(SQLiteDatabase conexao, Requerimento requerimento) {
         if(conexao != null){
-            RequerimentoDao dao = new RequerimentoDao(conexao);
+            RequerimentoRepository dao = new RequerimentoRepository(conexao);
             dao.editar(requerimento);
         }
         return null;
@@ -40,7 +40,7 @@ public class RequerimentoBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            RequerimentoDao dao = new RequerimentoDao(conexao);
+            RequerimentoRepository dao = new RequerimentoRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -48,7 +48,7 @@ public class RequerimentoBo {
 
     public List<Requerimento> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            RequerimentoDao dao = new RequerimentoDao(conexao);
+            RequerimentoRepository dao = new RequerimentoRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -56,7 +56,7 @@ public class RequerimentoBo {
 
     public List<Requerimento> pesquisar(SQLiteDatabase conexao, String titulo) {
         if(conexao != null){
-            RequerimentoDao dao = new RequerimentoDao(conexao);
+            RequerimentoRepository dao = new RequerimentoRepository(conexao);
             return dao.pesquisar(titulo);
         }
         return null;
@@ -64,7 +64,7 @@ public class RequerimentoBo {
 
     public Requerimento consultar(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            RequerimentoDao dao = new RequerimentoDao(conexao);
+            RequerimentoRepository dao = new RequerimentoRepository(conexao);
             return dao.consultar(id);
         }
         return null;

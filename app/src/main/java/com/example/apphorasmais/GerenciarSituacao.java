@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.apphorasmais.adapter.SituacaoAdapter;
-import com.example.apphorasmais.repository.Situacao;
+import com.example.apphorasmais.model.entity.Situacao;
 import com.example.apphorasmais.model.facade.*;
 
 import java.util.List;

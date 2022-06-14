@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.apphorasmais.repository.Curso;
+import com.example.apphorasmais.model.entity.Curso;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.apphorasmais.R;
 import com.example.apphorasmais.EditarCurso;

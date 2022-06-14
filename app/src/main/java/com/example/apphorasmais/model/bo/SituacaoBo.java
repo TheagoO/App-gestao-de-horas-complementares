@@ -2,8 +2,8 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.model.dao.SituacaoDao;
-import com.example.apphorasmais.repository.Situacao;
+import com.example.apphorasmais.repository.SituacaoRepository;
+import com.example.apphorasmais.model.entity.Situacao;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class SituacaoBo {
 
     public String salvar(SQLiteDatabase conexao, Situacao situacao) {
         if(conexao != null){
-            SituacaoDao dao = new SituacaoDao(conexao);
+            SituacaoRepository dao = new SituacaoRepository(conexao);
             dao.salvar(situacao);
         }
         return null;
@@ -24,7 +24,7 @@ public class SituacaoBo {
     public String editar(SQLiteDatabase conexao, Situacao situacao, String status) {
         if(conexao != null){
             if(validarDados(situacao, status)){
-                SituacaoDao dao = new SituacaoDao(conexao);
+                SituacaoRepository dao = new SituacaoRepository(conexao);
                 dao.editar(situacao);
                 return "Status editado";
             }
@@ -43,7 +43,7 @@ public class SituacaoBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            SituacaoDao dao = new SituacaoDao(conexao);
+            SituacaoRepository dao = new SituacaoRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -51,7 +51,7 @@ public class SituacaoBo {
 
     public List<Situacao> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            SituacaoDao dao = new SituacaoDao(conexao);
+            SituacaoRepository dao = new SituacaoRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -59,7 +59,7 @@ public class SituacaoBo {
 
     public List<Situacao> pesquisar(SQLiteDatabase conexao, String situacao) {
         if(conexao != null){
-            SituacaoDao dao = new SituacaoDao(conexao);
+            SituacaoRepository dao = new SituacaoRepository(conexao);
             return dao.pesquisar(situacao);
         }
         return null;
@@ -67,7 +67,7 @@ public class SituacaoBo {
 
     public Situacao consultar(SQLiteDatabase conexao, String status) {
         if(conexao != null){
-            SituacaoDao dao = new SituacaoDao(conexao);
+            SituacaoRepository dao = new SituacaoRepository(conexao);
             return dao.consultar(status);
         }
         return null;

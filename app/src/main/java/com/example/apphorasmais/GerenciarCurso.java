@@ -13,7 +13,7 @@ import com.example.apphorasmais.adapter.CursoAdapter;
 import android.widget.ImageView;
 
 import com.example.apphorasmais.model.facade.*;
-import com.example.apphorasmais.repository.Curso;
+import com.example.apphorasmais.model.entity.Curso;
 
 import java.util.List;
 

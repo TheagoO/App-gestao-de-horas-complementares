@@ -2,10 +2,10 @@ package com.example.apphorasmais.model.bo;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.apphorasmais.repository.Coordenador;
+import com.example.apphorasmais.model.entity.Coordenador;
 
 import java.util.List;
-import com.example.apphorasmais.model.dao.CoordenadorDao;
+import com.example.apphorasmais.repository.CoordenadorRepository;
 
 /**
  * @author Thiago Ferreira Assumpção
@@ -15,7 +15,7 @@ public class CoordenadorBo {
 
     public String salvar(SQLiteDatabase conexao, Coordenador coordenador) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             if(aplicarRegrasNegocio(coordenador)){
                 dao.salvar(coordenador);
                 return "Coordenador cadastrado! Senha: "+coordenador.getSenha();
@@ -40,7 +40,7 @@ public class CoordenadorBo {
         if(conexao != null){
             String retorno = validaDados(coordenador, nome, usuario);
             if(retorno.contains("alterado")){
-                CoordenadorDao dao = new CoordenadorDao(conexao);
+                CoordenadorRepository dao = new CoordenadorRepository(conexao);
                 dao.editar(coordenador);
             }
             return retorno;
@@ -50,7 +50,7 @@ public class CoordenadorBo {
 
     public String resetarSenha(SQLiteDatabase conexao, int id){
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             dao.resetarSenha(id);
             return "Senha redefinida para 20220320";
         }
@@ -60,7 +60,7 @@ public class CoordenadorBo {
     public String definirSenha(SQLiteDatabase conexao, int id, String senha, String confirmarSenha){
         if(conexao != null){
             if(validarSenha(senha, confirmarSenha)){
-                CoordenadorDao dao = new CoordenadorDao(conexao);
+                CoordenadorRepository dao = new CoordenadorRepository(conexao);
                 dao.definirSenha(id, senha);
                 return "Senha definida";
             }else{
@@ -89,7 +89,7 @@ public class CoordenadorBo {
 
     public String excluir(SQLiteDatabase conexao, int id) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             dao.excluir(id);
         }
         return null;
@@ -97,7 +97,7 @@ public class CoordenadorBo {
 
     public List<Coordenador> listar(SQLiteDatabase conexao) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             return dao.listar();
         }
         return null;
@@ -105,7 +105,7 @@ public class CoordenadorBo {
 
     public List<Coordenador> pesquisar(SQLiteDatabase conexao, String nome) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             return dao.pesquisar(nome);
         }
         return null;
@@ -113,7 +113,7 @@ public class CoordenadorBo {
 
     public Coordenador consultar(SQLiteDatabase conexao, String nome) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             return dao.consultar(nome);
         }
         return null;
@@ -121,7 +121,7 @@ public class CoordenadorBo {
 
     public Coordenador consultar(SQLiteDatabase conexao, String usuario, String senha) {
         if(conexao != null){
-            CoordenadorDao dao = new CoordenadorDao(conexao);
+            CoordenadorRepository dao = new CoordenadorRepository(conexao);
             Coordenador coordenador = dao.consultarParaLogin(usuario);
             if(coordenador.getId() != 0){
                 if(coordenador.getSenha().equals(senha)){
